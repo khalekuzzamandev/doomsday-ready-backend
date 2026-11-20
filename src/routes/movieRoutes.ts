@@ -31,7 +31,8 @@ router.post("/", async (req, res) => {
       message: "Movie created successfully",
       data: movie,
     });
-  } catch (error) {
+  } 
+  catch (error) {
     if (
       error instanceof mongoose.Error.ValidationError ||
       error instanceof mongoose.Error.CastError

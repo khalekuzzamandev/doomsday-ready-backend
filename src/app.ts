@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import movieRoutes from "./routes/movieRoutes";
+import globalErrorHandler from "./middlewares/error.middleware";
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.get("/", (req, res) => {
     message: "Doomsday Ready Backend Server is Running!",
   });
 });
-
+// Global Error Handler - Always Last
+app.use(globalErrorHandler);
 export default app;
